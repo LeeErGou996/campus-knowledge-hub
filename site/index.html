@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ed">
+  <meta name="description" content="Amazon Solutions Architect OA 四天冲刺学习站">
+  <title>Amazon SA OA · 4 天冲刺</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" type="button" data-home aria-label="返回首页">
+        <span class="brand-mark">OA</span>
+        <span>
+          <strong>Amazon SA Sprint</strong>
+          <small>Solutions Architect · Shenzhen</small>
+        </span>
+      </button>
+      <div class="global-search-wrap">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="globalSearch" class="global-search" type="search" placeholder="搜索 VPC、RDS、RTO、Leadership Principles…" autocomplete="off">
+        <kbd>⌘K</kbd>
+        <div id="searchPanel" class="search-panel" hidden></div>
+      </div>
+      <button id="menuButton" class="icon-button menu-button" type="button" aria-label="打开导航">☰</button>
+    </header>
+
+    <aside id="sidebar" class="sidebar" aria-label="学习导航">
+      <div class="sidebar-section">
+        <div class="sidebar-label">4-Day Plan</div>
+        <nav id="dayNav" class="nav-list"></nav>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Reference</div>
+        <nav id="refNav" class="nav-list"></nav>
+      </div>
+      <div class="sidebar-footer">
+        <div class="progress-copy"><span>学习进度</span><strong id="sidebarProgressText">0 / 6</strong></div>
+        <div class="progress-track"><span id="sidebarProgressBar"></span></div>
+        <small>仅保存在当前浏览器，不修改仓库进度。</small>
+      </div>
+    </aside>
+
+    <main id="main" class="main" tabindex="-1">
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <template id="homeTemplate">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">OA ACTIVE · 7-DAY WINDOW</span>
+        <h1>4 天把知识变成<br><em>场景判断能力</em></h1>
+        <p>不是 AWS 认证课程。只覆盖这次 Solutions Architect OA 需要的 Technical Simulation、Technical Experience 与 Work Style。</p>
+        <div class="hero-actions">
+          <button class="primary-button" data-open-doc="day1">开始 Day 1</button>
+          <button class="secondary-button" data-open-doc="quick">考前速查</button>
+        </div>
+      </div>
+      <div class="oa-card">
+        <div class="oa-card-top"><span>Assessment</span><strong>60 min</strong></div>
+        <div class="oa-segment"><b>40</b><span>Technical<br>Simulation</span></div>
+        <div class="oa-segment"><b>10</b><span>Technical<br>Experience</span></div>
+        <div class="oa-segment"><b>10</b><span>Work<br>Style</span></div>
+        <div class="oa-note">当前邮件未显示 Coding Assessment</div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <div><span class="eyebrow">YOUR ROUTE</span><h2>四天学习路线</h2></div>
+        <div class="progress-pill"><span id="homeProgressText">0 / 6 完成</span></div>
+      </div>
+      <div id="dayCards" class="day-grid"></div>
+    </section>
+
+    <section class="section-block two-column">
+      <div>
+        <div class="section-heading compact"><div><span class="eyebrow">HIGH-YIELD TOPICS</span><h2>高频知识入口</h2></div></div>
+        <div id="topicGrid" class="topic-grid"></div>
+      </div>
+      <div class="decision-card">
+        <span class="eyebrow">SIMULATION RULE</span>
+        <h3>每道场景题只问 5 件事</h3>
+        <ol>
+          <li><b>Goal</b> — 客户真正要优化什么？</li>
+          <li><b>Constraint</b> — 流量、数据、合规、预算限制是什么？</li>
+          <li><b>Risk</b> — 单点、暴露、静态密钥、无备份？</li>
+          <li><b>Choice</b> — 最简单的托管、弹性方案是什么？</li>
+          <li><b>Trade-off</b> — Reliability / Security / Performance / Cost。</li>
+        </ol>
+        <button class="text-button" data-open-doc="practice">进入 24 道场景练习 →</button>
+      </div>
+    </section>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
